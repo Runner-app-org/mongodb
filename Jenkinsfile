@@ -10,7 +10,7 @@ pipeline {
         stage('Deploy to Kubernetes') {
             steps {
                 withAWS(credentials: 'aws-credentials-id', region: 'ap-southeast-1') {
-                    sh 'kubectl apply -f deployment.yaml'
+                    sh 'kubectl apply -f mongodb-deployment.yaml'
                 }
             }
         }
